@@ -37,7 +37,7 @@ Click on Run or use Shift + F10
 
 
 ## Code Overview
-kotlin '''
+```kotlin
 import kotlin.random.Random
 import kotlin.system.measureTimeMillis
 
@@ -74,7 +74,7 @@ fun main() {
 
     println("Time taken: ${timeTaken / 1000} seconds.")
 }
-'''
+```
 
 ## Future Improvement
 * Leaderboard System – Track best times and scores.
@@ -87,5 +87,5 @@ fun main() {
 This project is licensed under the MIT License – see the LICENSE file for details.
 
 ## Let's Connect
-LinkedIn
-GitHub
+* [Linkedin](https://www.linkedin.com/in/omkar3101)
+* [Github]( https://github.com/Omkar3101 )
