@@ -87,7 +87,7 @@ fun main() {
 
 
 ## License
-This project is licensed under the MIT License – see the LICENSE file for details.
+This project is licensed under the MIT License – see the [LICENSE](https://github.com/Omkar3101/Kotlin3_NumberGuessingGame/blob/main/LICENSE) file for details.
 
 ## Let's Connect
 * [Linkedin](https://www.linkedin.com/in/omkar3101)
