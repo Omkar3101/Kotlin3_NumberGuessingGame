@@ -19,7 +19,7 @@ A fun and interactive Number Guessing Game built using Kotlin, featuring difficu
 ##How to Run the Project?
 
 * Clone the Repository
-git clone https://github.com/YourUsername/NumberGuessingGame.git
+git clone [https://github.com/YourUsername/NumberGuessingGame.git](https://github.com/Omkar3101/Kotlin3_NumberGuessingGame.git)
 
 * Open in IntelliJ IDEA
 Select Open Project and navigate to the cloned repository
@@ -29,7 +29,7 @@ Open Main.kt file
 Click on Run or use Shift + F10
 
 * Play the Game
-1. Select a difficulty level: Easy (1-10), Medium (1-50), or Hard (1-100).
+1. Select a difficulty level: Easy, Medium, or Hard.
 2. Enter your guess and receive feedback.
 3. Use hints if needed.
 4. See how long it takes to guess the correct number!
