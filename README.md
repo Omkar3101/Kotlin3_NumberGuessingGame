@@ -39,40 +39,43 @@ Click on Run or use Shift + F10
 ## Code Overview
 ```kotlin
 import kotlin.random.Random
-import kotlin.system.measureTimeMillis
-
 fun main() {
-    println("Welcome to the Number Guessing Game!")
-    
-    // Select Difficulty Mode
-    println("Select Difficulty: 1. Easy (1-10)  2. Medium (1-50)  3. Hard (1-100)")
-    val difficulty = readLine()?.toIntOrNull() ?: 1
-    val range = when (difficulty) {
-        2 -> 50
-        3 -> 100
-        else -> 10
+    println("GUESS THE NUMBER")
+    println("Choose difficulty level:(1) Easy (2) Medium (3) Hard")
+    val difficulty = readLine()?.toIntOrNull()?:1
+    val (range, maxAttempts) = when (difficulty) {
+        1 -> 50 to 10
+        2 -> 100 to 7
+        else -> 500 to  5
     }
 
-    val secretNumber = Random.nextInt(1, range + 1)
-    var guess: Int? = null
+    val numGuess = Random.nextInt(1, range + 1)
     var attempts = 0
 
-    val timeTaken = measureTimeMillis {
-        while (guess != secretNumber) {
-            println("Enter your guess:")
-            guess = readLine()?.toIntOrNull()
+    println("Guess the number between 1 and $range! You have $maxAttempts attempts.")
 
-            when {
-                guess == null -> println("Please enter a valid number.")
-                guess < secretNumber -> println("Too low! Try again.")
-                guess > secretNumber -> println("Too high! Try again.")
-                else -> println("Congratulations! You guessed the number in $attempts attempts.")
+    while (attempts < maxAttempts) {
+        print("Enter your guess: ")
+        val userGuess = readLine()?.toIntOrNull()?:0
+        attempts++
+
+        when{
+            userGuess < numGuess -> println("Too low! Attempts left: ${maxAttempts - attempts}")
+            userGuess > numGuess -> println("Too high! Attempts left: ${maxAttempts - attempts}")
+            else -> {
+                println("\uD83C\uDF89 Congratulations! You guessed it in $attempts attempts.")
+                return
             }
-            attempts++
+        }
+        //Hint System for hard level : Number is even or odd
+        var ranNum = Random.nextInt(1,11)
+        if (attempts == 3 && range == 500) {
+            val hint = if (numGuess % 2 == 0) "even" else "odd"
+            println("Hint: The number is $hint number.")
+            println("Hint: The number is between this range ${numGuess-ranNum} and ${numGuess+ranNum}")
         }
     }
-
-    println("Time taken: ${timeTaken / 1000} seconds.")
+    println("Game Over! The correct number was $numGuess")
 }
 ```
 
